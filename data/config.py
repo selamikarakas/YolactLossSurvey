@@ -183,18 +183,6 @@ cig_butts_dataset = dataset_base.copy({
   'label_map': { 1:  1 }
 })
 
-skydata = dataset_base.copy({
-  'name': 'skydata',
-  'train_info': '/cta/datasets/SkyDataV1/train_DET.json',
-  'train_images': '/cta/datasets/SkyDataV1/train/',
-  'valid_info': '/cta/datasets/SkyDataV1/train_DET.json',
-  'valid_images': '/cta/datasets/SkyDataV1/train/',
-  'class_names': ('People','Bicycle','Motor','Pickup','Car','Van','Truck','Bus','Boat'),
-  'label_map': { 0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9}
-})	
-
-
-
 # ----------------------- TRANSFORMS ----------------------- #
 
 resnet_transform = Config({
@@ -219,9 +207,6 @@ darknet_transform = Config({
     'subtract_means': False,
     'to_float': True,
 })
-
-
-
 
 
 # ----------------------- BACKBONES ----------------------- #
@@ -849,21 +834,6 @@ yolact_plus_resnet50_cig_butts_config = yolact_plus_resnet50_config.copy({
     # Image Size
     'max_size': 512,
     
-})
-
-yolact_plus_skydata_config = yolact_plus_base_config.copy({
-    'name': 'yolact_plus_skydata',
-    # Dataset stuff
-    'dataset': skydata,
-    'num_classes': len(skydata.class_names) + 1,
-    
-    'max_size': 1920,
-    'max_iter': 10000,
-    
-    'masks_to_train': 16,
-    'backbone': yolact_plus_base_config.backbone.copy({
-        'pred_scales': [[int(x[0] / yolact_plus_base_config.max_size * 1920)] for x in yolact_plus_base_config.backbone.pred_scales],
-    }),
 })
 
 yolact_plus_cig_butts_config = yolact_plus_base_config.copy({
