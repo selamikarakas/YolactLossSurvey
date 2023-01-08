@@ -1,6 +1,6 @@
 In recent years, object detection and instance segmentation have become important tasks in computer vision, with numerous applications in robotics, surveillance, and autonomous driving. One of the state-of-the-art methods for these tasks is [YOLACT](https://github.com/dbolya/yolact), which combines the strengths of region proposal-based and anchor-based approaches. However, a critical aspect of YOLACT's performance is the choice of loss function, which determines how the model learns from training data and generalizes to unseen data. In this paper, we investigate the effect of different loss functions on the mask mAP performance of YOLACT on several benchmark datasets. 
 
-Our changes on the source code of YOLACT is in this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/layers/modules/multibox_loss.py)
+Our changes on the source code of YOLACT is in this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/layers/modules/multibox_loss.py). Also we added configuartions to this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/data/config.py) to train accordingly.
 
 # OUR MASK mAP and FPS RESULT ON YOLACT++ trained on [Cigarette Butts Dataset](https://www.immersivelimit.com/datasets/cigarette-butts)
 
