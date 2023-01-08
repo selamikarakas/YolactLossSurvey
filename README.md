@@ -1,3 +1,5 @@
+In recent years, object detection and instance segmentation have become important tasks in computer vision, with numerous applications in robotics, surveillance, and autonomous driving. One of the state-of-the-art methods for these tasks is [YOLACT](https://github.com/dbolya/yolact), which combines the strengths of region proposal-based and anchor-based approaches. However, a critical aspect of YOLACT's performance is the choice of loss function, which determines how the model learns from training data and generalizes to unseen data. In this paper, we investigate the effect of different loss functions on the mask mAP performance of YOLACT on several benchmark datasets. 
+
 # OUR MASK mAP and FPS RESULT ON YOLACT++ trained on [Cigarette Butts Dataset](https://www.immersivelimit.com/datasets/cigarette-butts)
 
 |                  |  FPS  |  all  | AP50  | AP55  | AP60  | AP65  | AP70  | AP75  | AP80  | AP85  | AP90  | AP95  |
