@@ -2,6 +2,8 @@ In recent years, object detection and instance segmentation have become importan
 
 Our changes on the source code of YOLACT is in this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/layers/modules/multibox_loss.py). Also we added configuartions to this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/data/config.py) to train accordingly.
 
+In machine learning and deep learning, a loss function is a measure of how well a model is able to predict the expected output given a set of inputs. The goal of training a model is to minimize the loss function, so that the model can make accurate predictions on unseen data. There are many different types of loss functions that can be used, depending on the task at hand. In this project, we have used following loss functions:
+
 **MSE Loss:** 
 
 MSE (Mean Squared Error) Loss is a common loss function used in regression tasks, where the goal is to predict a continuous value. It is defined as the mean of the squared difference between the predicted value and the true value. MSE Loss is sensitive to large errors, as the square function amplifies the difference between the predicted and true values.
