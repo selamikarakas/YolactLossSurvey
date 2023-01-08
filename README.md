@@ -3,15 +3,19 @@ In recent years, object detection and instance segmentation have become importan
 Our changes on the source code of YOLACT is in this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/layers/modules/multibox_loss.py). Also we added configuartions to this [file](https://github.com/selamikarakas/YolactLossSurvey/blob/main/data/config.py) to train accordingly.
 
 **MSE Loss:** 
+
 MSE (Mean Squared Error) Loss is a common loss function used in regression tasks, where the goal is to predict a continuous value. It is defined as the mean of the squared difference between the predicted value and the true value. MSE Loss is sensitive to large errors, as the square function amplifies the difference between the predicted and true values.
 
 **Huber Loss:**
+
 Huber Loss is a loss function that is similar to MSE Loss, but it is less sensitive to large errors. It is defined as the mean of the squared difference between the predicted and true values, but it uses a linear function instead of a square function for errors that are above a certain threshold. This makes Huber Loss more robust to outliers, as it does not amplify the effect of large errors as much as MSE Loss does.
 
 **Dice Loss:**
+
 Dice Loss is a loss function used in image segmentation tasks, where the goal is to predict a binary mask for each object in the image. It is defined as the negative of the Dice coefficient, which is a measure of the overlap between the predicted mask and the true mask. The Dice coefficient is calculated as the ratio of the intersection of the two masks to the union of the two masks. Dice Loss can be used to optimize the accuracy of the predicted masks.
 
 **Log Cosh Dice Loss:** 
+
 Log Cosh Dice Loss is a variant of Dice Loss that uses the log-cosh function instead of the square function. The log-cosh function is defined as the logarithm of the hyperbolic cosine of the difference between the predicted and true values. Log Cosh Dice Loss is less sensitive to large errors than MSE Loss and Huber Loss, making it more robust to outliers.
 
 # OUR MASK mAP and FPS RESULT ON YOLACT++ trained on [Cigarette Butts Dataset](https://www.immersivelimit.com/datasets/cigarette-butts)
