@@ -20,6 +20,8 @@ Dice Loss is a loss function used in image segmentation tasks, where the goal is
 
 Log Cosh Dice Loss is a variant of Dice Loss that uses the log-cosh function instead of the square function. The log-cosh function is defined as the logarithm of the hyperbolic cosine of the difference between the predicted and true values. Log Cosh Dice Loss is less sensitive to large errors than MSE Loss and Huber Loss, making it more robust to outliers.
 
+The results of our experiments are summarized in the following table, which shows the mask mAP scores for each loss function on Cigarette Butts Dataset.
+
 # OUR MASK mAP and FPS RESULT ON YOLACT++ trained on [Cigarette Butts Dataset](https://www.immersivelimit.com/datasets/cigarette-butts)
 
 |                  |  FPS  |  all  | AP50  | AP55  | AP60  | AP65  | AP70  | AP75  | AP80  | AP85  | AP90  | AP95  |
@@ -33,3 +35,5 @@ Log Cosh Dice Loss is a variant of Dice Loss that uses the log-cosh function ins
 | Huber Loss + BCE | 23.89 | 81.36 | 99.00 | 99.00 | 99.00 | 99.00 | 98.00 | 97.00 | 95.72 | 83.89 | 42.59 |  0.33 |
 | Huber Loss + MSE | 21.78 | 78.39 | 99.85 | 99.85 | 99.85 | 98.87 | 98.86 | 97.80 | 93.35 | 75.13 | 20.33 | 0.00  |
 |     BCE + MSE    | 21.48 | 80.54 | 99.78 | 99.78 | 99.78 | 99.78 | 98.86 | 98.79 | 96.75 | 83.25 | 28.58 |  0.05 |
+
+Based on our experiments, we were unable to find a loss function that consistently outperformed YOLACT's original loss on all metrics. In some cases, the other loss functions performed better on certain metrics, but they did not consistently outperform the original loss across all metrics. This suggests that YOLACT's original loss function may already be well-suited for the task at hand, and that further improvements in performance may need to be sought through other methods, such as model architecture or training data.
