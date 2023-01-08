@@ -1,3 +1,5 @@
+# OUR MASK mAP and FPS RESULT ON YOLACT++ trained on [Cigarette Butts Dataset](https://www.immersivelimit.com/datasets/cigarette-butts)
+
 |                  |  FPS  |  all  | AP50  | AP55  | AP60  | AP65  | AP70  | AP75  | AP80  | AP85  | AP90  | AP95  |
 |------------------|:-----:|:-----:|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 |        BCE       | 22.21 | 83.65 | 99.99 | 99.99 | 99.99 | 99.99 | 98.99 | 98.01 | 98.01 | 89.95 | 49.81 |  1.82 |
