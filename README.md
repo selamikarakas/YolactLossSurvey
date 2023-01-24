@@ -31,9 +31,24 @@ The results of our experiments are summarized in the following table, which show
 |    Huber Loss    | 21.89 | 80.53 | 99.96 | 99.96 | 98.97 | 98.97 | 97.98 | 97.00 | 95.79 | 85.39 | 30.20 |  1.05 |
 |  Log Cosh Dice   | 21.35 | 71.56 | 98.96 | 98.96 | 98.96 | 98.94 | 97.98 | 95.86 | 83.48 | 39.03 |  3.40 |  0.00 |
 |     MSE Loss     | 22.89 | 79.21 | 98.95 | 98.95 | 98.95 | 97.96 | 97.96 | 96.94 | 93.60 | 82.84 | 25.92 |  0.02 |
-|   Log Cosh BCE   | 21.46 | 80.65 | 99.78 | 99.78 | 99.78 | 98.84 | 98.84 | 97.90 | 95.47 | 82.11 | 32.16 |  1.84 |
 | Huber Loss + BCE | 23.89 | 81.36 | 99.00 | 99.00 | 99.00 | 99.00 | 98.00 | 97.00 | 95.72 | 83.89 | 42.59 |  0.33 |
 | Huber Loss + MSE | 21.78 | 78.39 | 99.85 | 99.85 | 99.85 | 98.87 | 98.86 | 97.80 | 93.35 | 75.13 | 20.33 | 0.00  |
 |     BCE + MSE    | 21.48 | 80.54 | 99.78 | 99.78 | 99.78 | 99.78 | 98.86 | 98.79 | 96.75 | 83.25 | 28.58 |  0.05 |
 
-Based on our experiments, we were unable to find a loss function that consistently outperformed YOLACT's original loss on all metrics. In some cases, the other loss functions performed better on certain metrics, but they did not consistently outperform the original loss across all metrics. This suggests that YOLACT's original loss function may already be well-suited for the task at hand, and that further improvements in performance may need to be sought through other methods, such as model architecture or training data.
+Based on our experiments, we were unable to find a loss function that consistently outperformed YOLACT's original loss on all metrics. In some cases, the other loss functions performed better on certain metrics, but they did not consistently outperform the original loss across all metrics. 
+
+# OUR MASK mAP and FPS RESULT ON YOLACT++ trained on Cigarette Butts Dataset using hybrid losses with different ratios
+
+|                  |  α    |  β    | FPS   | all   | AP50  | AP60  | AP70  | AP80  | AP90  | AP95  
+|------------------|:-----:|:-----:|-------|-------|-------|-------|-------|-------|-------|-------
+|  2MSE + BCE      | 2 | 1| 27.46 | 80.53 | 99.50 | 99.50 | 98.52 | 97.42 | 30.76 | 0.13 | 
+|     3MSE + BCE    | 3 |  1 |  25.28 |  79.01 |  99.02 |  99.02 |  98.07 |  93.27 |  27.95 |  0.00 |  
+|    2MSE + Huber    | 2 | 1 | 26.54 | 75.44 | 99.02 | 97.13 | 97.13 | 92.18 | 14.63 | 0.00 | 
+|  3MSE + Huber  | 3 | 1 | 26.40 | 78.00 | 98.99| 98.01 | 97.01 | 93.71 | 21.20| 0.00 |  
+|     2Huber + BCE    | 2| 1 | 26.59 | 82.37 | 99.96 | 98.75 | 96.28 | 96.09 | 48.86| 0.82| 
+|   3Huber + BCE  | 3 | 1 | 26.70 | 83.24 | 98.91 | 98.91 | 98.91 | 96.85 | 51.82| 0.38 | 
+| 0.5MSE + BCE  | 0.5 | 1 | 27.46 | 84.43 | 99.98 | 99.98 | 99.98 | 97.98 | 54.41 | 2.08 | 
+| 0.5MSE + Huber | 0.5 | 1 | 26.07 | 71.37 | 93.93 | 92.71 | 89.80 | 84.60 | 13.13 | 0.00 | 
+|     0.5 Huber + BCE   | 0.5 | 1 | 27.62 | 82.35 | 99.86 | 99.86 | 98.89 | 97.84 | 42.13 | 83.25 | 
+
+We later focused on hybrid losses to see if we can make further improvements in the performance of the loss functions. With the combination of 0.5MSE and BCE we were able to get better mask mAP results than the original one on Cigarette Butts Dataset.
